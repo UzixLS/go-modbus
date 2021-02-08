@@ -9,7 +9,7 @@ import (
 	"os"
 	"testing"
 
-	"github.com/grid-x/modbus"
+	"github.com/UzixLS/go-modbus"
 )
 
 const (

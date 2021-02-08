@@ -1,4 +1,4 @@
-module github.com/grid-x/modbus
+module github.com/UzixLS/go-modbus
 
 go 1.13
 

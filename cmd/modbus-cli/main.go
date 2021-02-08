@@ -14,7 +14,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/grid-x/modbus"
+	"github.com/UzixLS/go-modbus"
 	"github.com/grid-x/serial"
 )
 

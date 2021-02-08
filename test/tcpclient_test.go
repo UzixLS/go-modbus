@@ -10,7 +10,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/grid-x/modbus"
+	"github.com/UzixLS/go-modbus"
 )
 
 const (

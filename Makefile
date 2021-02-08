@@ -1,7 +1,7 @@
 GO_FILES := $(shell find . -type f -name "*.go")
 GO_BUILD := CGO_ENABLED=0 go build -ldflags "-w -s"
 GO_TOOLS := gridx/modbus-dev:1.11.latest-linux-amd64
-DOCKER_RUN := docker run --rm -v $$PWD:/go/src/github.com/grid-x/modbus -w /go/src/github.com/grid-x/modbus
+DOCKER_RUN := docker run --rm -v $$PWD:/go/src/github.com/UzixLS/go-modbus -w /go/src/github.com/UzixLS/go-modbus
 GO_RUN := ${DOCKER_RUN} ${GO_TOOLS} bash -c
 
 BRANCH := $(shell echo ${BUILDKITE_BRANCH} | sed 's/\//_/g')
