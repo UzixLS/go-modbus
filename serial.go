@@ -68,6 +68,27 @@ func (mb *serialPort) close() (err error) {
 	return
 }
 
+func (mb *serialPort) Flush() (err error) {
+	mb.mu.Lock()
+	defer mb.mu.Unlock()
+
+	return mb.flush()
+}
+
+// Flush flushes the serial port read buffer if it is connected. Caller must hold the mutex.
+func (mb *serialPort) flush() (err error) {
+	if mb.port != nil {
+		buf := make([]byte, 1024)
+		for {
+			n, _ := mb.port.Read(buf)
+			if n == 0 {
+				break
+			}
+		}
+	}
+	return
+}
+
 func (mb *serialPort) logf(format string, v ...interface{}) {
 	if mb.Logger != nil {
 		mb.Logger.Printf(format, v...)
